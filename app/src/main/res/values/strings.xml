@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">InventStuff</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hello">Hello,</string>
+    <string name="user">Username</string>
+    <string name="txtheadingappbar">Selamat datang di aplikasi InventStuff!</string>
+    <string name="searchItem">Cari data ruangan...</string>
+    <string name="txt_room_name">Nama Ruangan</string>
+    <string name="txt_room_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="txtHeadingPhotoRoom">Foto ruangan</string>
+    <string name="txtHeadingRoomName">Nama Ruangan</string>
+    <string name="txtHeadingRoomDescription">Deskripsi Ruangan</string>
+    <string name="txtRoomDescription">Tuliskan detail deskripsi ruangan disini...</string>
+    <string name="txt_button_camera">Kamera</string>
+    <string name="txt_button_gallery">Gallery</string>
+    <string name="txt_button_add">Tambahkan</string>
+</resources>
