@@ -13,7 +13,13 @@
         android:theme="@style/Theme.InventStuff"
         tools:targetApi="31">
         <activity
-            android:name=".ui.room.InputRoomActivity"
+            android:name=".ui.room.InventoryItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.room.InventoryItemInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.room.RoomInputActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

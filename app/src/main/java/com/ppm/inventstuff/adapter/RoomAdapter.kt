@@ -1,5 +1,6 @@
 package com.ppm.inventstuff.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ppm.inventstuff.data.local.Room
 import com.ppm.inventstuff.databinding.ItemsRoomBinding
+import com.ppm.inventstuff.ui.room.InventoryItemActivity
 
 class RoomAdapter : ListAdapter<Room, RoomAdapter.MyViewHolder>(WordsComparator()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -16,7 +18,14 @@ class RoomAdapter : ListAdapter<Room, RoomAdapter.MyViewHolder>(WordsComparator(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val getRoom = getItem(position)
+        holder.bind(getRoom)
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, InventoryItemActivity::class.java).apply {
+                putExtra(ROOM_ID, getRoom.idRoom)
+            }
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     class MyViewHolder(private val binding: ItemsRoomBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -38,6 +47,10 @@ class RoomAdapter : ListAdapter<Room, RoomAdapter.MyViewHolder>(WordsComparator(
         override fun areContentsTheSame(oldItem: Room, newItem: Room): Boolean {
             return oldItem == newItem
         }
+    }
+
+    companion object {
+        const val ROOM_ID = "ROOM_ID"
     }
 
 }

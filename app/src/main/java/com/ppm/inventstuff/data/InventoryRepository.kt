@@ -2,6 +2,7 @@ package com.ppm.inventstuff.data
 
 import androidx.lifecycle.LiveData
 import com.ppm.inventstuff.data.local.InventoryDao
+import com.ppm.inventstuff.data.local.ItemsRoom
 import com.ppm.inventstuff.data.local.Room
 
 class InventoryRepository(private val inventoryDao: InventoryDao) {
@@ -10,7 +11,13 @@ class InventoryRepository(private val inventoryDao: InventoryDao) {
         inventoryDao.insertRoom(room)
     }
 
+    suspend fun insertInventoryItem(itemsRoom: ItemsRoom) {
+        inventoryDao.insertInventoryItem(itemsRoom)
+    }
+
     fun getAllRoom(): LiveData<List<Room>> = inventoryDao.getAllRoom()
+
+    fun getAllInventoryItem(roomId: Int): LiveData<List<ItemsRoom>> = inventoryDao.getAllItemsByRoomId(roomId)
 
 
     companion object {

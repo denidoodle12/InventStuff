@@ -11,6 +11,12 @@ interface InventoryDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertRoom(room: Room)
 
-    @Query("SELECT * from Room")
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertInventoryItem(itemsRoom: ItemsRoom)
+
+    @Query("SELECT * FROM Room")
     fun getAllRoom(): LiveData<List<Room>>
+
+    @Query("SELECT * FROM ItemsRoom WHERE roomId = :roomId")
+    fun getAllItemsByRoomId(roomId: Int): LiveData<List<ItemsRoom>>
 }

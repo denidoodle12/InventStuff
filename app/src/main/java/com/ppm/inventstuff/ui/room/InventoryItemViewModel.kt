@@ -1,16 +1,15 @@
 package com.ppm.inventstuff.ui.room
 
 import android.net.Uri
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ppm.inventstuff.data.InventoryRepository
-import com.ppm.inventstuff.data.local.Room
+import com.ppm.inventstuff.data.local.ItemsRoom
 import kotlinx.coroutines.launch
 
-class RoomViewModel(private val repository: InventoryRepository) : ViewModel() {
+class InventoryItemViewModel(private val repository: InventoryRepository) : ViewModel() {
 
     private val _currentImageUri = MutableLiveData<Uri?>()
     val currentImageUri: LiveData<Uri?> get() = _currentImageUri
@@ -19,11 +18,13 @@ class RoomViewModel(private val repository: InventoryRepository) : ViewModel() {
         _currentImageUri.value = uri
     }
 
-    fun getAllRoom(): LiveData<List<Room>> =repository.getAllRoom()
-    fun insertRoom(room: Room) {
+    fun getAllInventoryItem(roomId: Int) : LiveData<List<ItemsRoom>> =
+        repository.getAllInventoryItem(roomId)
+
+    fun insertInventoryItem(itemsRoom: ItemsRoom) {
         viewModelScope.launch {
-            Log.d("RoomViewModel", "Inserting room: $room")
-            repository.insertRoom(room)
+            repository.insertInventoryItem(itemsRoom)
         }
     }
+
 }

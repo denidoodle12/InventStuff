@@ -54,7 +54,7 @@ class RoomFragment : Fragment() {
 
     private fun setupAction() {
         binding.fabAddRoom.setOnClickListener {
-            val intent = Intent(requireContext(), InputRoomActivity::class.java)
+            val intent = Intent(requireContext(), RoomInputActivity::class.java)
             startActivity(intent)
         }
     }

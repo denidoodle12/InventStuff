@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
-@Database(entities = [Room::class], version = 5, exportSchema = true)
+@Database(entities = [Room::class, ItemsRoom::class], version = 8, exportSchema = true)
 abstract class InventoryDatabase : RoomDatabase() {
     abstract fun inventoryDao(): InventoryDao
 
