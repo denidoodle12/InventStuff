@@ -7,12 +7,11 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import com.ppm.inventstuff.R
 import com.ppm.inventstuff.ViewModelFactory
 import com.ppm.inventstuff.data.local.Room
 import com.ppm.inventstuff.databinding.ActivityInputRoomBinding
 
-class InputRoomActivity : AppCompatActivity() {
+class RoomInputActivity : AppCompatActivity() {
 
     private var _binding: ActivityInputRoomBinding? = null
     private val binding get() = _binding!!
@@ -25,6 +24,9 @@ class InputRoomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityInputRoomBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.hide()
+
         setupAction()
     }
 

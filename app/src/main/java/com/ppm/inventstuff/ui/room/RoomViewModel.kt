@@ -19,7 +19,7 @@ class RoomViewModel(private val repository: InventoryRepository) : ViewModel() {
         _currentImageUri.value = uri
     }
 
-    fun getAllRoom(): LiveData<List<Room>> = repository.getAllRoom()
+    fun getAllRoom(): LiveData<List<Room>> =repository.getAllRoom()
     fun insertRoom(room: Room) {
         viewModelScope.launch {
             Log.d("RoomViewModel", "Inserting room: $room")

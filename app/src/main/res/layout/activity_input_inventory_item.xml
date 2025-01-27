@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
-                android:text="@string/txtAppBarInputRoom"
+                android:text="@string/txtAppBarInputInventory"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/toolbar"
@@ -53,7 +53,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="@string/txtHeadingPhotoRoom"
+        android:text="@string/txtHeadingPhotoInventoryItem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appbar" />
 
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@id/textView">
 
         <ImageView
-            android:id="@+id/ivRoomPhoto"
+            android:id="@+id/iv_inventoryItemPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
@@ -83,12 +83,12 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="@string/txtHeadingRoomName"
+        android:text="@string/txtHeadingInventoryName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewPreview" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputRoomName"
+        android:id="@+id/textInputInventoryName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <EditText
-            android:id="@+id/edtRoomName"
+            android:id="@+id/edtInventoryName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -116,26 +116,62 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="@string/txtHeadingRoomDescription"
+        android:text="@string/txtHeadingInventoryStock"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputRoomName" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputInventoryName" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputDescription"
+        android:id="@+id/textInputInventoryStock"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="15dp"
+        app:startIconDrawable="@drawable/healthicons_rdt_result_out_stock_outline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtRoomDescription"
+        <EditText
+            android:id="@+id/edtInventoryStock"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:hint="@string/txtRoomDescription"
-            android:inputType="text"/>
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints="name" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/txtHeadingInventoryPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputInventoryStock" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputInventoryPrice"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        app:startIconDrawable="@drawable/iconoir_dollar_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <EditText
+            android:id="@+id/edtInventoryPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:autofillHints="name" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -150,8 +186,8 @@
         android:text="@string/txt_button_camera"
         android:textColor="@color/black"
         android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="@+id/textInputDescription"
-        app:layout_constraintTop_toBottomOf="@+id/textInputDescription" />
+        app:layout_constraintStart_toStartOf="@+id/textInputInventoryPrice"
+        app:layout_constraintTop_toBottomOf="@+id/textInputInventoryPrice" />
 
     <Button
         android:id="@+id/button_gallery"
@@ -174,7 +210,7 @@
         android:text="@string/txt_button_add"
         android:textSize="11sp"
         android:fontFamily="@font/montserrat_bold"
-        app:layout_constraintEnd_toEndOf="@+id/textInputDescription"
+        app:layout_constraintEnd_toEndOf="@+id/textInputInventoryStock"
         app:layout_constraintTop_toTopOf="@+id/button_camera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

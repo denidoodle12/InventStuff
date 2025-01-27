@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.ppm.inventstuff.data.InventoryRepository
 import com.ppm.inventstuff.di.Injection
+import com.ppm.inventstuff.ui.recapitulation.RecapitulationViewModel
+import com.ppm.inventstuff.ui.room.InventoryItemViewModel
 import com.ppm.inventstuff.ui.room.RoomViewModel
 
 @Suppress("UNCHECKED_CAST")
@@ -13,6 +15,12 @@ class ViewModelFactory(private val repository: InventoryRepository) : ViewModelP
         return when {
             modelClass.isAssignableFrom(RoomViewModel::class.java) -> {
                 RoomViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(InventoryItemViewModel::class.java) -> {
+                InventoryItemViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(RecapitulationViewModel::class.java) -> {
+                RecapitulationViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class")
         }

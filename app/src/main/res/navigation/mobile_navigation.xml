@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_room">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_room"
         android:name="com.ppm.inventstuff.ui.room.RoomFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_room" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.ppm.inventstuff.ui.recapitulation.RekapitulasiFragment"
+        android:id="@+id/navigation_recapitulation"
+        android:name="com.ppm.inventstuff.ui.recapitulation.RecapitulationFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_rekapitulasi" />
+        tools:layout="@layout/fragment_recapitulation" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_profile"
         android:name="com.ppm.inventstuff.ui.profile.ProfileFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_profile" />
