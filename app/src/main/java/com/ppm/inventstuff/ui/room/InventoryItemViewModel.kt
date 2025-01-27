@@ -18,12 +18,31 @@ class InventoryItemViewModel(private val repository: InventoryRepository) : View
         _currentImageUri.value = uri
     }
 
+    fun getCurrentImageUriAsString(): String? {
+        return _currentImageUri.value?.toString()
+    }
+
     fun getAllInventoryItem(roomId: Int) : LiveData<List<ItemsRoom>> =
         repository.getAllInventoryItem(roomId)
+
+    fun getAllInventoryByKdItem(kdItem: Int) : LiveData<List<ItemsRoom>> =
+        repository.getAllInventoryByKdItem(kdItem)
 
     fun insertInventoryItem(itemsRoom: ItemsRoom) {
         viewModelScope.launch {
             repository.insertInventoryItem(itemsRoom)
+        }
+    }
+
+    fun deleteInventoryItem(kdItem: Int) {
+        viewModelScope.launch {
+            repository.deleteInventoryItem(kdItem)
+        }
+    }
+
+    fun updateInventoryItem(kdItem: Int, nameItems: String, stockItems: Int, priceItems: Int) {
+        viewModelScope.launch {
+            repository.updateInventoryItem(kdItem, nameItems, stockItems, priceItems)
         }
     }
 

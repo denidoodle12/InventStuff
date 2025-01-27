@@ -21,7 +21,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="180dp"
                 android:background="@drawable/appbar_background"
                 android:theme="?actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,10 +82,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:queryHint="@string/searchItem"
+                    android:theme="@style/CustomSearchView"
                     app:iconifiedByDefault="false"/>
 
             </com.google.android.material.card.MaterialCardView>
-
 
             <ImageButton
                 android:id="@+id/imgLogout"
@@ -135,6 +135,7 @@
         android:foregroundGravity="bottom"
         app:fabSize="normal"
         app:layout_anchorGravity="bottom|end"
+        app:tint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_post" />

@@ -60,7 +60,8 @@
                     android:id="@+id/searchViewItem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:queryHint="@string/searchItem"
+                    app:queryHint="@string/searchItemInventory"
+                    android:theme="@style/CustomSearchView"
                     app:iconifiedByDefault="false"/>
 
             </com.google.android.material.card.MaterialCardView>
@@ -101,6 +102,7 @@
         android:foregroundGravity="bottom"
         app:fabSize="normal"
         app:layout_anchorGravity="bottom|end"
+        app:tint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_post" />

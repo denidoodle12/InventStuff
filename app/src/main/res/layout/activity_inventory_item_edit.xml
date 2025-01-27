@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
-                android:text="@string/txtAppBarInputInventory"
+                android:text="@string/txtAppBarEditInventory"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/toolbar"
@@ -46,27 +46,16 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="@string/txtHeadingPhotoInventoryItem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appbar" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewPreview"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView">
+        app:layout_constraintTop_toBottomOf="@id/appbar">
 
         <ImageView
             android:id="@+id/iv_inventoryItemPhoto"
@@ -176,41 +165,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button_camera"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginVertical="15dp"
-        android:backgroundTint="@color/greys"
-        android:drawableStart="@drawable/mingcute_camera_fill"
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="15dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="@string/txt_button_camera"
-        android:textColor="@color/black"
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="@+id/textInputInventoryPrice"
-        app:layout_constraintTop_toBottomOf="@+id/textInputInventoryPrice" />
-
-    <Button
-        android:id="@+id/button_gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:backgroundTint="@color/greys"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="@string/txt_button_gallery"
-        android:textColor="@color/black"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button_camera"
-        app:layout_constraintStart_toEndOf="@+id/button_camera"
-        app:layout_constraintTop_toTopOf="@+id/button_camera"
-        app:layout_constraintEnd_toStartOf="@id/button_add"/>
-
-    <Button
-        android:id="@+id/button_add"
-        android:layout_width="135dp"
-        android:layout_height="40dp"
-        android:text="@string/txt_button_add"
-        android:textSize="11sp"
-        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/txt_button_save"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textInputInventoryStock"
-        app:layout_constraintTop_toTopOf="@+id/button_camera" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputInventoryPrice" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

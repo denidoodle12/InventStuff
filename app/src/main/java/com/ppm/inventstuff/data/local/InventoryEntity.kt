@@ -30,7 +30,12 @@ data class ItemsRoom(
     val kdItem: Int = 0,
     val nameItems: String,
     val stockItems: Int,
-    val priceItems: Float,
+    val priceItems: Int,
     val imageInventoryItem: String,
     val roomId: Int
+)
+
+data class RecapitulationResult(
+        val totalQuantity: Int,
+        val totalAssets: Int
 )

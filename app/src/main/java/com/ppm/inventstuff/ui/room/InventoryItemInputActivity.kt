@@ -25,6 +25,9 @@ class InventoryItemInputActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityInputInventoryItemBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.hide()
+
         setupAction()
         val roomIds = intent.getIntExtra(InventoryItemActivity.ID_ROOM, -1)
         Log.d("ROOM ID INPUT", "ROOM ID INPUT RESPONSE : $roomIds")
@@ -69,7 +72,7 @@ class InventoryItemInputActivity : AppCompatActivity() {
             ItemsRoom(
                 nameItems = inventoryName,
                 stockItems = inventoryStock.toInt(),
-                priceItems = inventoryPrice.toFloat(),
+                priceItems = inventoryPrice.toInt(),
                 imageInventoryItem = inventoryImage,
                 roomId = roomIds
             )
